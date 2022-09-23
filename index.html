@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="desktop.css">
+    <link rel="stylesheet" href="tablet.css">
+    <link rel="stylesheet" href="mobile.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('dySmzaEdxA1bCEPC8');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('service_8tigyht', 'template_pumt4nd', this)
+                    .then(function () {
+                        console.log('SUCCESS!');
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bgFlex">
+            <div id="bg1" data-aos="fade-right" data-aos-duration="1500"></div>
+        </div>
+        <section id="home">
+            <div class="navFlex">
+                <p>KM</p>
+                <div class="navItems">
+                    <a href="#">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#aboutMe" id="ab"> About me</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#portfSlider">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="meFlex">
+                <div data-aos="zoom-in-up" data-aos-duration="1500" class="me">
+                    <p id="first">I AM</p>
+                    <p id="name">KONUL</p>
+                    <p id="job">FRONT END DEVELOPER</p>
+                </div>
+            </div>
+        </section>
+        <!-----------------------------------Services-------------------------------------------->
+        <section id="services">
+            <p>My Services</p>
+            <div class="cardFlex">
+                <div data-aos="fade-up" data-aos-duration="1500" class="card" id="card1">
+                    <img src="./images/img1.png" alt="icon1">
+                    <p>Using HTML, JavaScript and CSS to bring concepts to life.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-duration="1500" class="card" id="card2">
+                    <img src="./images/img2.png" alt="icon2">
+                    <p>Developing and maintaining the user interface.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-duration="1500" class="card" id="card3">
+                    <img src="./images/img3.png" alt="icon3">
+                    <p>Implementing design on mobile websites.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-duration="1500" class="card" id="card4">
+                    <img src="./images/img4.png" alt="icon4">
+                    <p>Web development support and maintenance</p>
+                </div>
+            </div>
+        </section>
+        <!-----------------------------------About-Me-------------------------------------------->
+        <section id="aboutMe">
+            <div class="aboutFlex">
+                <img src="./images/coding-on-laptop.jpg" alt="bgimg">
+                <div class="info" data-aos="zoom-in-left" data-aos-duration="1500">
+                    <p>ABOUT ME</p>
+                    <p>Computer science graduate from ASOIU. I
+                        have been working on myself for many years
+                        now. In these years I have learned multiple
+                        skills in a good level and worked on some
+                        projects with teams. These experiences
+                        helped me to become a great researcher and
+                        being able to learn the time management
+                        and improve my other soft skills as well.</p>
+                    <a href="./forDownload/MyResume.pdf" download> <button>DOWNLOAD CV</button></a>
+                </div>
+            </div>
+        </section>
+        <!-----------------------------------Skills-------------------------------------------->
+        <section id="skills">
+            <p id="header">My Skills</p>
+            <p id="note">I develop skills regularly</p>
+            <div class="skillsFlex">
+                <div class="imgCard">
+                    <img data-aos="fade-up" data-aos-anchor-placement="top-bottom" id="html" src="./images/html.png"
+                        alt="html">
+                </div>
+                <div class="imgCard">
+                    <img data-aos="fade-up" data-aos-anchor-placement="top-bottom" id="css" src="./images/css.png"
+                        alt="css">
+                </div>
+                <div class="imgCard">
+                    <img data-aos="fade-up" data-aos-anchor-placement="top-bottom" src="./images/js.png" alt="js">
+                </div>
+                <div class="imgCard">
+                    <img data-aos="fade-up" data-aos-anchor-placement="top-bottom" src="./images/React.webp"
+                        alt="React">
+                </div>
+                <div class="imgCard">
+                    <img data-aos="fade-up" data-aos-anchor-placement="top-bottom" id="node" src="./images/node.png"
+                        alt="node">
+                </div>
+                <div class="imgCard">
+                    <img data-aos="fade-up" data-aos-anchor-placement="top-bottom" src="./images/github.png"
+                        alt="github">
+                </div>
+                <div class="imgCard">
+                    <img data-aos="fade-up" data-aos-anchor-placement="top-bottom" id="figma" id="node"
+                        src="./images/figma.png" alt="figma">
+                </div>
+            </div>
+        </section>
+        <!-----------------------------------portfolio-slider-------------------------------------------->
+        <section id="portfSlider">
+            <p id="header2">Portfolio</p>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./images/sliderImg/w1.jpg" alt="w1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/sliderImg/w2.jpg" alt="w1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/sliderImg/w3.jpg" alt="w1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/sliderImg/w4.jpg" alt="w1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/sliderImg/w5.jpg" alt="w1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/sliderImg/w6.jpg" alt="w1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/sliderImg/w7.jpg" alt="w1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/sliderImg/w8.jpg" alt="w1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/sliderImg/w9.jpg" alt="w1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/sliderImg/w10.jpg" alt="w1">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <!-----------------------------------Contact-------------------------------------------->
+        <section id="contact">
+            <p id="header3">CONTACT</p>
+            <div class="contactFlex">
+                <div class="contactMe">
+                    <hr>
+                    <p id="loc">Baku, Azerbaijan</p>
+                    <div class="imgDiv">
+                        <a href="https://www.linkedin.com/in/konul-memmedova-1b20011a3/"><img
+                                src="./images/linkedIn.png" alt="linkedIn"></a>
+                        <a href="https://www.facebook.com/profile.php?id=100076864980262"><img src="./images/fb.png"
+                                alt="fb"></a>
+                        <a href="https://github.com/Konul304"><img src="./images/git.png" alt="git"></a>
+                    </div>
+                </div>
+                <form id="contact-form">
+                    <input type="hidden" name="contact_number">
+                    <label>Name</label>
+                    <input id="FullName" type="text" name="user_name">
+                    <label>Email</label>
+                    <input id="email" type="email" name="user_email">
+                    <br>
+                    <div class="sub">
+                        <label>Message</label>
+                        <textarea id="msg" name="message"></textarea>
+                        <input id="submit" type="submit" value="Send">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
